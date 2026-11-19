@@ -55,7 +55,7 @@ src/
 │   └── SignUp.jsx          # New user registration view
 ├── App.js                  # Root router and shared user state
 ├── index.js                # React entry point
-└── index.css               # Tailwind CSS directives
+└── index.css              
 ```
 
 ---
