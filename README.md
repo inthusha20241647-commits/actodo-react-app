@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# Actodo — Activity & Task Management Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![React](https://img.shields.io/badge/React-18.x-61DAFB?style=flat-square&logo=react&logoColor=black)
+![React Router](https://img.shields.io/badge/React_Router-6.x-CA4245?style=flat-square&logo=react-router&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
-## Available Scripts
+A single-page task and activity management app built with **React**, **React Router**, and **Tailwind CSS**. Actodo demonstrates a client-side login/signup flow, passing user data between routes, and add/delete state management in a modular component structure.
 
-In the project directory, you can run:
+🔗 **[View Live Demo](https://actodo-react-app-kk7n.vercel.app/)**
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📸 Application Preview
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Actodo demo](./src/assets/actodo.png)
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ✨ Key Features
 
-### `npm run build`
+- **Client-Side Authentication Flow:** User registration (`/signUp`) and login (`/`) with error feedback for unregistered accounts.
+- **Multi-Page SPA Routing:** Client-side navigation using `react-router-dom` (`BrowserRouter`, `Routes`, `Route`).
+- **Route State Transfer:** Passes the logged-in username to the dashboard with `useNavigate` and `useLocation` for a personalized greeting.
+- **Interactive Task Management:** Add and delete daily activities using `useState` and immutable array updates (`filter` and spread syntax).
+- **Modular Component Architecture:** Page-level views (`Login`, `SignUp`, `Landing`) and reusable components (`Header`, `Card`, `TodoContainer`, `TodoAdd`, `TodoList`, `TodoItem`).
+- **Responsive Layout:** Tailwind CSS flexbox layout with color-coded summary cards.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🛠️ Tech Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React
+- React Router DOM
+- Tailwind CSS
+- JavaScript (ES6+)
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🏗️ Project Architecture
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```text
+src/
+|── assets/
+├── components/
+│   ├── Card.jsx            # Reusable info summary card
+│   ├── Header.jsx          # Personalized dashboard header
+│   ├── TodoAdd.jsx         # Controlled input for creating tasks
+│   ├── TodoContainer.jsx   # Parent state container for activities
+│   ├── TodoItem.jsx        # Single task row with delete handler
+│   └── TodoList.jsx        # Renders the list of tasks
+├── pages/
+│   ├── Landing.jsx         # Dashboard view after login
+│   ├── Login.jsx           # Login and validation view
+│   └── SignUp.jsx          # New user registration view
+├── App.js                  # Root router and shared user state
+├── index.js                # React entry point
+└── index.css               # Tailwind CSS directives
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🚀 Getting Started
 
-## Learn More
+```bash
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
+npm install
+npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The app runs at `http://localhost:3000`.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Demo login:** username `Inthusha`, password `123` (or create an account on the Sign Up page).
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## ⚠️ Known Limitations
 
-### Analyzing the Bundle Size
+- Users are stored in React state only, so accounts reset on page refresh.
+- Passwords are stored in plain text. This is for learning only, not production use.
+- The dashboard has no route guard, so it should be reached through the login page.
+- Tasks are not saved between sessions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
